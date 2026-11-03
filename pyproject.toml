@@ -1,0 +1,20 @@
+[project]
+name = "pemrescue"
+version = "0.1.0"
+description = "从截断/损坏的 PEM、DER 文件中尽可能提取 X.509 证书与密钥信息，并以带语义的 ASN.1 树展示"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["rich>=13.7"]
+
+[project.scripts]
+pemrescue = "pemrescue.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8", "cryptography>=42"]
+
+[build-system]
+requires = ["uv_build>=0.8,<0.13"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
